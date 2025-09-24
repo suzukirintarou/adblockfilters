@@ -8,3 +8,15 @@ yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp/"])
 
 ! Togetter.comの「フォローしてね」ボックスを非表示にする
 togetter.com##.follow_me_box
+
+! Togetter.comのページ右下に浮かぶSNS共有ボックスを非表示にする
+togetter.com##div.social_floating_box
+
+! Togetter.comのページ下部に固定表示されるSNS共有フッターを非表示にする
+togetter.com##footer.fixed_social_footer
+
+! Amazon.co.jpの商品ページに表示される「この商品に関連する情報」ボックスを非表示にする
+amazon.co.jp###desktop-dp-ilm_feature_div_01
+
+! Amazon.co.jpのプロフィール関連情報ボックスを非表示にする
+amazon.co.jp###px-profile_fea
