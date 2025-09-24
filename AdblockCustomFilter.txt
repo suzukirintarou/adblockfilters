@@ -3,3 +3,5 @@ yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp"])
 
 yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp/"])
 yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp/"])
+
+##.follow_me_box
