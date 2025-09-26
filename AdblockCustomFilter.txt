@@ -1,10 +1,10 @@
 ! Yahoo.co.jp内の外部リンク（yahoo.co.jpを含まないURL）を非表示にする
-yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp"])
-yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp"])
+! yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp"])
+! yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp"])
 
 ! Yahoo.co.jp内の外部リンク（末尾のスラッシュ付きでyahoo.co.jpを含まないURL）を非表示にする
-yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp/"])
-yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp/"])
+! yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp/"])
+! yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp/"])
 
 ! Togetter.comの「フォローしてね」ボックスを非表示にする
 togetter.com##.follow_me_box
@@ -20,3 +20,4 @@ amazon.co.jp###desktop-dp-ilm_feature_div_01
 
 ! Amazon.co.jpのプロフィール関連情報ボックスを非表示にする
 amazon.co.jp###px-profile_fea
+
