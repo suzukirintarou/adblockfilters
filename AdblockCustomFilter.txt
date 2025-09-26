@@ -20,6 +20,3 @@ amazon.co.jp###desktop-dp-ilm_feature_div_01
 
 ! Amazon.co.jpのプロフィール関連情報ボックスを非表示にする
 amazon.co.jp###px-profile_fea
-
-
-
