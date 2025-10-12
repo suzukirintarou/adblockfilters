@@ -1,3 +1,9 @@
+! blog.livedoor.jp 以外へのリンクを非表示にする
+blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
+
+!Youtubeの自動再生の無効化
+
+
 ! Yahoo.co.jp内の外部リンク（yahoo.co.jpを含まないURL）を非表示にする
 yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp"])
 yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp"])
@@ -19,4 +25,14 @@ togetter.com##footer.fixed_social_footer
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 
 ! Amazon.co.jpのプロフィール関連情報ボックスを非表示にする
-amazon.co.jp###px-profile_fea
+amazon.co.jp###px-profile_feature_div
+
+! YouTube Video Previews (Autoplay on hover) Block
+www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)
+
+! YouTube Info Cards Block
+www.youtube.com##.ytp-cards-button
+www.youtube.com##.ytp-card
+
+! YouTube Video Previews (Pointer Events Block)
+www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)
