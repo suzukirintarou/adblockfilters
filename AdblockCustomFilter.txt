@@ -6,18 +6,12 @@ impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
 impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
 impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
 
-! yahoo.co.jp: 警告メッセージのルートを含む span を非表示
-yahoo.co.jp##span:has(div.riff-Message__root--warning)
-
 ! amazon: Prime 関連アクションを非表示（.co.jp と .com）
 amazon.co.jp##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 
 ! blog.livedoor.jp: サイト内リンク以外を非表示
 blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
-
-! yahoo.co.jp: ドメインに yahoo.co.jp を含まない外部リンクを非表示
-yahoo.co.jp##a[href]:not([href*="yahoo.co.jp"])
 
 ! posfie.com: SNS 関連の固定要素を非表示
 posfie.com##.follow_me_box
@@ -34,3 +28,4 @@ togetter.com##.list_box.type_amazon.has_campaign
 ! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 amazon.co.jp###px-profile_feature_div
+
