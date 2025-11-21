@@ -1,22 +1,36 @@
-! Yahoo.co.jp内の外部リンク（yahoo.co.jpを含まないURL）を非表示にする
-yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp"])
-yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp"])
+!テスト版
+!2025/11/21版
 
-! Yahoo.co.jp内の外部リンク（末尾のスラッシュ付きでyahoo.co.jpを含まないURL）を非表示にする
-yahoo.co.jp##a[href^="http://"]:not([href*="yahoo.co.jp/"])
-yahoo.co.jp##a[href^="https://"]:not([href*="yahoo.co.jp/"])
+! impress.co.jp: 特定のニュースリストを非表示（親 li を隠す）
+impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
+impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
+impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
 
-! Togetter.comの「フォローしてね」ボックスを非表示にする
+! yahoo.co.jp: 警告メッセージのルートを含む span を非表示
+yahoo.co.jp##span:has(div.riff-Message__root--warning)
+
+! amazon: Prime 関連アクションを非表示（.co.jp と .com）
+amazon.co.jp##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
+amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
+
+! blog.livedoor.jp: サイト内リンク以外を非表示
+blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
+
+! yahoo.co.jp: ドメインに yahoo.co.jp を含まない外部リンクを非表示
+yahoo.co.jp##a[href]:not([href*="yahoo.co.jp"])
+
+! posfie.com: SNS 関連の固定要素を非表示
+posfie.com##.follow_me_box
+posfie.com##div.social_floating_box
+posfie.com##footer.fixed_social_footer
+posfie.com##.list_box.type_amazon.has_campaign
+
+! togetter.com: フォロー・SNS・Amazonキャンペーン要素を非表示
 togetter.com##.follow_me_box
-
-! Togetter.comのページ右下に浮かぶSNS共有ボックスを非表示にする
 togetter.com##div.social_floating_box
-
-! Togetter.comのページ下部に固定表示されるSNS共有フッターを非表示にする
 togetter.com##footer.fixed_social_footer
+togetter.com##.list_box.type_amazon.has_campaign
 
-! Amazon.co.jpの商品ページに表示される「この商品に関連する情報」ボックスを非表示にする
+! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
 amazon.co.jp###desktop-dp-ilm_feature_div_01
-
-! Amazon.co.jpのプロフィール関連情報ボックスを非表示にする
-amazon.co.jp###px-profile_fea
+amazon.co.jp###px-profile_feature_div
