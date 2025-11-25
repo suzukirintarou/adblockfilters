@@ -1,5 +1,5 @@
 !テスト版
-!2025/11/21版
+!2025/11/25版
 
 ! impress.co.jp: 特定のニュースリストを非表示（親 li を隠す）
 impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
@@ -13,19 +13,25 @@ amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 ! blog.livedoor.jp: サイト内リンク以外を非表示
 blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
 
+! yahoo.co.jp: ドメインに yahoo.co.jp を含まない外部リンクを非表示
+yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
+
+! yahoo.co.jp: 警告メッセージ削除
+yahoo.co.jp##.riff-Message__root--warning
+
 ! posfie.com: SNS 関連の固定要素を非表示
 posfie.com##.follow_me_box
 posfie.com##div.social_floating_box
 posfie.com##footer.fixed_social_footer
-posfie.com##.list_box.type_amazon.has_campaign
+posfie.com##.ad_overlay
+posfie.com##.list_box.type_amazon
 
 ! togetter.com: フォロー・SNS・Amazonキャンペーン要素を非表示
 togetter.com##.follow_me_box
 togetter.com##div.social_floating_box
 togetter.com##footer.fixed_social_footer
-togetter.com##.list_box.type_amazon.has_campaign
+togetter.com##.list_box.type_amazon
 
 ! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 amazon.co.jp###px-profile_feature_div
-
