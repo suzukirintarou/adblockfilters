@@ -1,5 +1,8 @@
 ! トランクを反映
-! 2025/11/27版
+! 2025/11/28版
+
+! html-load.comのスクリプト全部ブロック
+||html-load.com^$script
 
 ! Google Tag Managerのスクリプトをブロック
 ||www.googletagmanager.com/gtm.js$script
@@ -47,4 +50,5 @@ togetter.com##.list_box.type_amazon
 ! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 amazon.co.jp###px-profile_feature_div
+
 
