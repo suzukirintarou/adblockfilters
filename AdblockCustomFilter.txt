@@ -1,6 +1,10 @@
 !テスト版
 !2025/11/25版
 
+html-load対策
+! src 属性に html-load.com を含む scriptタグを削除
+##script[src*="html-load.com"]
+
 ! impress.co.jp: 特定のニュースリストを非表示（親 li を隠す）
 impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
 impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
@@ -35,3 +39,4 @@ togetter.com##.list_box.type_amazon
 ! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 amazon.co.jp###px-profile_feature_div
+
