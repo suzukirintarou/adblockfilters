@@ -1,8 +1,8 @@
 ! ============================================
 ! 1. 汎用ブロック
 ! ============================================
-##.yyi-rinker-contents              ! Rinker 商品ボックス
-##div#site_loader_overlay           ! サイトのローディングオーバーレイ
+! ##.yyi-rinker-contents              ! Rinker 商品ボックス
+! ##div#site_loader_overlay           ! サイトのローディングオーバーレイ
 
 ! ============================================
 ! 2. Amazon（JP / US 共通化）
@@ -53,3 +53,4 @@ www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)    
 ! http/https 両方を正規表現で統合
 yahoo.co.jp##a[href]:matches-regex(^https?://(?!.*yahoo\.co\.jp).*)
 ! → Yahoo! JAPAN 内部リンク以外をすべて非表示
+
