@@ -1,54 +1,55 @@
-! トランクを反映
-! 2025/11/28版
+! ============================================
+! 1. 汎用ブロック
+! ============================================
+##.yyi-rinker-contents              ! Rinker 商品ボックス
+##div#site_loader_overlay           ! サイトのローディングオーバーレイ
 
-! html-load.comのスクリプト全部ブロック
-||html-load.com^$script
-
-! Google Tag Managerのスクリプトをブロック
-||www.googletagmanager.com/gtm.js$script
-
-! yimg.jp(yahoo系)のスクリプトをブロック
-
-||yads.c.yimg.jp/js/yads-async.js$script
-||s.yimg.jp/images/ds/yas/ual-*.js$script
-||s.yimg.jp/images/ds/cl/ds-custom-logger-*.js$script
-||s.yimg.jp/images/slink/highlightsearch/*/js/highlightsearch.js$script
-||s.yimg.jp/images/slink/directlink/*/js/directlink.js$script
-||s.yimg.jp/images/mempf/mhd/*/mempf.js$script
-||s.yimg.jp/images/security/pf/yjsecure.js$script
-
-! impress.co.jp: 特定のニュースリストを非表示（親 li を隠す）
-impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
-impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
-impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
-
-! Amazon: Prime 関連アクションを非表示（.co.jp と .com）
+! ============================================
+! 2. Amazon（JP / US 共通化）
+! ============================================
+! Prime 誘導バナー（JP / US 共通）
 amazon.co.jp,amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 
-! blog.livedoor.jp: サイト内リンク以外を非表示
-blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"])
+! 日本独自の広告ブロック
+amazon.co.jp###desktop-dp-ilm_feature_div_01     ! ILM 広告
+amazon.co.jp###px-profile_feature_div            ! プロフィール広告
 
-! yahoo.co.jp: ドメインに yahoo.co.jp を含まない外部リンクを非表示
-yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
+! ============================================
+! 3. Livedoor Blog
+! ============================================
+! 外部リンクを完全に非表示（内部リンクのみ許可）
+blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
 
-! yahoo.co.jp: 警告メッセージ削除
-yahoo.co.jp##.riff-Message__root--warning
+! ============================================
+! 4. Copilot
+! ============================================
+copilot.microsoft.com##canvas     ! Canvas UI 要素
 
-! posfie.com: SNS 関連の固定要素等を非表示
-posfie.com##.follow_me_box
-posfie.com##.social_floating_box
-posfie.com##footer.fixed_social_footer
-posfie.com##.ad_overlay
-posfie.com##.list_box.type_amazon
+! ============================================
+! 5. Impress（PC Watch / AV Watch 系）
+! ============================================
+impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])   ! Streamer Watch 誘導
+impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])     ! 今日のセール誘導
+impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])            ! 外部 PCWatch.nosh.jp 誘導
 
-! togetter.com: フォロー・SNS・Amazonキャンペーン要素を非表示
-togetter.com##.follow_me_box
-togetter.com##.social_floating_box
-togetter.com##footer.fixed_social_footer
-togetter.com##.list_box.type_amazon
+! ============================================
+! 6. posfie.com / togetter.com（SNS フォロー誘導）
+! ============================================
+posfie.com,togetter.com##.follow_me_box
+posfie.com,togetter.com##div.social_floating_box
+posfie.com,togetter.com##footer.fixed_social_footer
 
-! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
-amazon.co.jp###desktop-dp-ilm_feature_div_01
-amazon.co.jp###px-profile_feature_div
+! ============================================
+! 7. YouTube（UI 要素の無効化）
+! ============================================
+www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)   ! ホバーカード
+www.youtube.com##.ytp-card                                                            ! 再生中カード
+www.youtube.com##.ytp-cards-button                                                    ! カードボタン
+www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)          ! グリッド動画クリック無効化
 
-
+! ============================================
+! 8. Yahoo! JAPAN（外部リンク排除）
+! ============================================
+! http/https 両方を正規表現で統合
+yahoo.co.jp##a[href]:matches-regex(^https?://(?!.*yahoo\.co\.jp).*)
+! → Yahoo! JAPAN 内部リンク以外をすべて非表示
