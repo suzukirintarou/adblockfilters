@@ -1,8 +1,8 @@
 ! ============================================
 ! 1. 汎用ブロック
 ! ============================================
-! ##.yyi-rinker-contents              ! Rinker 商品ボックス
-! ##div#site_loader_overlay           ! サイトのローディングオーバーレイ
+##.yyi-rinker-contents              ! Rinker 商品ボックス
+##div#site_loader_overlay           ! サイトのローディングオーバーレイ
 
 ! ============================================
 ! 2. Amazon（JP / US 共通化）
@@ -38,6 +38,7 @@ impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])            ! 外部 PCWatch.
 posfie.com,togetter.com##.follow_me_box
 posfie.com,togetter.com##div.social_floating_box
 posfie.com,togetter.com##footer.fixed_social_footer
+posfie.com,togetter.com##div.list_box.type_amazon
 
 ! ============================================
 ! 7. YouTube（UI 要素の無効化）
@@ -53,4 +54,3 @@ www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)    
 ! http/https 両方を正規表現で統合
 yahoo.co.jp##a[href]:matches-regex(^https?://(?!.*yahoo\.co\.jp).*)
 ! → Yahoo! JAPAN 内部リンク以外をすべて非表示
-
