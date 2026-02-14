@@ -1,46 +1,65 @@
-!テスト版
-!2025/11/25版
+! ============================================
+! 1. 汎用ブロック（高速化）
+! ============================================
+##.yyi-rinker-contents
+##div#site_loader_overlay
 
-html-load対策
-! 属性にhtml-load.com を含む scriptタグを削除
-##script[src*="html-load.com"]
-##script[data-sdk*="html-load.com"]
-##script[data-cfasync*="html-load.com"]
-##script[charset*="html-load.com"]
+! Copilot（UI 要素の徹底排除）
+||copilot.microsoft.com^$elemhide
+copilot.microsoft.com##div[class*="avatar"], div[class*="persona"], div[class*="character"], img[class*="avatar"]
+copilot.microsoft.com##canvas
 
-! impress.co.jp: 特定のニュースリストを非表示（親 li を隠す）
+! ============================================
+! 2. Amazon（JP / US 共通）
+! ============================================
+amazon.co.jp,amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
+
+! 日本独自
+amazon.co.jp###desktop-dp-ilm_feature_div_01
+amazon.co.jp###px-profile_feature_div
+
+! ============================================
+! 3. Livedoor Blog（外部リンク完全排除）
+! ============================================
+! CSS ではなくセレクタで高速化
+blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"])
+
+! ============================================
+! 4. Impress（PC Watch / AV Watch 系）
+! ============================================
 impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
 impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
 impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
 
-! amazon: Prime 関連アクションを非表示（.co.jp と .com）
-amazon.co.jp##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
-amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
+! ============================================
+! 5. posfie.com / togetter.com（SNS 誘導の徹底排除）
+! ============================================
+posfie.com,togetter.com##.ad_custom, .fixed_social_footer, .follow_me_box, .info_status_box, .social_box, .social_floating_box
+posfie.com,togetter.com##div.ad_custom, div.list_box.type_amazon, div.social_floating_box, footer.fixed_social_footer
 
-! blog.livedoor.jp: サイト内リンク以外を非表示
-blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
+! ============================================
+! 6. YouTube（UI 無効化・操作制限）
+! ============================================
+www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)
+www.youtube.com##.ytp-card
+www.youtube.com##.ytp-cards-button
+www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)
 
-! yahoo.co.jp: ドメインに yahoo.co.jp を含まない外部リンクを非表示
+! 追加：ショート動画誘導を削除
+www.youtube.com##ytd-reel-shelf-renderer
+www.youtube.com##ytd-rich-shelf-renderer
+
+! 追加：ホームのおすすめを弱体化
+www.youtube.com##ytd-rich-grid-renderer:style(opacity: 0.3 !important;)
+
+! ============================================
+! 7. Yahoo! JAPAN（外部リンク排除・高速化）
+! ============================================
+! 正規表現を軽量化（先頭一致のみ）
 yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
 
-! yahoo.co.jp: 警告メッセージ削除
-yahoo.co.jp##.riff-Message__root--warning
-
-! posfie.com: SNS 関連の固定要素を非表示
-posfie.com##.follow_me_box
-posfie.com##div.social_floating_box
-posfie.com##footer.fixed_social_footer
-posfie.com##.ad_overlay
-posfie.com##.list_box.type_amazon
-
-! togetter.com: フォロー・SNS・Amazonキャンペーン要素を非表示
-togetter.com##.follow_me_box
-togetter.com##div.social_floating_box
-togetter.com##footer.fixed_social_footer
-togetter.com##.list_box.type_amazon
-
-! Amazon.co.jp: 商品ページの関連情報・プロフィールボックスを非表示
-amazon.co.jp###desktop-dp-ilm_feature_div_01
-amazon.co.jp###px-profile_feature_div
-
-
+! ============================================
+! 8. その他
+! ============================================
+gamespark.jp##.af_box
+nhk.or.jp##dialog#erpc-half-modal
