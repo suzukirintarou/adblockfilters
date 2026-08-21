@@ -63,3 +63,4 @@ yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
 ! ============================================
 gamespark.jp##.af_box
 nhk.or.jp##dialog#erpc-half-modal
+togetter.com##figure.list_box.type_amazon
