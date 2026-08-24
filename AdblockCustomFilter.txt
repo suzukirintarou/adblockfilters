@@ -1,56 +1,97 @@
+[Adblock Plus 2.0]
+! Title: Personal UI / Distraction Filter
+! Version: 1.0
+! Last modified: 2026-08-24
+
 ! ============================================
 ! 1. 汎用ブロック
 ! ============================================
-##.yyi-rinker-contents              ! Rinker 商品ボックス
-##div#site_loader_overlay           ! サイトのローディングオーバーレイ
+##.yyi-rinker-contents
+##div#site_loader_overlay
 
 ! ============================================
-! 2. Amazon（JP / US 共通化）
+! 2. Copilot
+! UI 要素の徹底排除
 ! ============================================
-! Prime 誘導バナー（JP / US 共通）
+copilot.microsoft.com##div[class*="avatar"]
+copilot.microsoft.com##div[class*="persona"]
+copilot.microsoft.com##div[class*="character"]
+copilot.microsoft.com##img[class*="avatar"]
+copilot.microsoft.com##canvas
+
+! ============================================
+! 3. Amazon（JP / US 共通）
+! ============================================
 amazon.co.jp,amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 
-! 日本独自の広告ブロック
-amazon.co.jp###desktop-dp-ilm_feature_div_01     ! ILM 広告
-amazon.co.jp###px-profile_feature_div            ! プロフィール広告
+! 日本独自
+amazon.co.jp###desktop-dp-ilm_feature_div_01
+amazon.co.jp###px-profile_feature_div
 
 ! ============================================
-! 3. Livedoor Blog
+! 4. Livedoor Blog
+! 外部リンクを非表示
 ! ============================================
-! 外部リンクを完全に非表示（内部リンクのみ許可）
-blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"]) { display: none !important; }
-
-! ============================================
-! 4. Copilot
-! ============================================
-copilot.microsoft.com##canvas     ! Canvas UI 要素
+blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"])
 
 ! ============================================
 ! 5. Impress（PC Watch / AV Watch 系）
 ! ============================================
-impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])   ! Streamer Watch 誘導
-impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])     ! 今日のセール誘導
-impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])            ! 外部 PCWatch.nosh.jp 誘導
+impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
+impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
+impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
 
 ! ============================================
-! 6. posfie.com / togetter.com（SNS フォロー誘導）
+! 6. posfie.com / togetter.com
+! SNS・広告誘導を排除
 ! ============================================
+posfie.com,togetter.com##.ad_custom
+posfie.com,togetter.com##.fixed_social_footer
 posfie.com,togetter.com##.follow_me_box
+posfie.com,togetter.com##.info_status_box
+posfie.com,togetter.com##.social_box
+posfie.com,togetter.com##.social_floating_box
+
+posfie.com,togetter.com##div.ad_custom
+posfie.com,togetter.com##div.list_box.type_amazon
 posfie.com,togetter.com##div.social_floating_box
 posfie.com,togetter.com##footer.fixed_social_footer
-posfie.com,togetter.com##div.list_box.type_amazon
 
 ! ============================================
-! 7. YouTube（UI 要素の無効化）
+! 7. YouTube
+! UI 無効化・誘導削除
 ! ============================================
-www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)   ! ホバーカード
-www.youtube.com##.ytp-card                                                            ! 再生中カード
-www.youtube.com##.ytp-cards-button                                                    ! カードボタン
-www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)          ! グリッド動画クリック無効化
+
+! ホバー・カード
+www.youtube.com##.ytp-card
+www.youtube.com##.ytp-cards-button
+
+! ショート動画
+www.youtube.com##ytd-reel-shelf-renderer
+www.youtube.com##ytd-rich-shelf-renderer
+
+! ホームのおすすめ
+! 元の opacity: 0.3 はAdBlockではstyleフィルターとして
+! 安定しないため、要素そのものを消す場合は以下を有効化
+!
+! www.youtube.com##ytd-rich-grid-renderer
+
+! 元の :upward() はAdBlock互換性のため削除
 
 ! ============================================
-! 8. Yahoo! JAPAN（外部リンク排除）
+! 8. Yahoo! JAPAN
+! 外部リンクを非表示
 ! ============================================
-! http/https 両方を正規表現で統合
-yahoo.co.jp##a[href]:matches-regex(^https?://(?!.*yahoo\.co\.jp).*)
-! → Yahoo! JAPAN 内部リンク以外をすべて非表示
+yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
+
+! ============================================
+! 9. Togetter
+! ============================================
+togetter.com##figure.list_box.type_amazon
+togetter.com##aside.amazon_bulk_box
+
+! ============================================
+! 10. その他
+! ============================================
+gamespark.jp##.af_box
+nhk.or.jp##dialog#erpc-half-modal
