@@ -59,10 +59,14 @@ www.youtube.com##ytd-rich-grid-renderer:style(opacity: 0.3 !important;)
 yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
 
 ! ============================================
-! 8. その他
+! 8. togetter
+! ============================================
+
+togetter.com##figure.list_box.type_amazon
+togetter.com##aside.amazon_bulk_box
+
+! ============================================
+! X. その他
 ! ============================================
 gamespark.jp##.af_box
 nhk.or.jp##dialog#erpc-half-modal
-togetter.com##figure.list_box.type_amazon
-togetter.com##figure.list_box.type_amazon_bulk_box
-
