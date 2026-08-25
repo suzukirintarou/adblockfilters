@@ -40,17 +40,17 @@ posfie.com,togetter.com##div.ad_custom, div.list_box.type_amazon, div.social_flo
 ! ============================================
 ! 6. YouTube（UI 無効化・操作制限）
 ! ============================================
-www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)
-www.youtube.com##.ytp-card
-www.youtube.com##.ytp-cards-button
-www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)
+! www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)
+! www.youtube.com##.ytp-card
+! www.youtube.com##.ytp-cards-button
+! www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)
 
 ! 追加：ショート動画誘導を削除
-www.youtube.com##ytd-reel-shelf-renderer
-www.youtube.com##ytd-rich-shelf-renderer
+! www.youtube.com##ytd-reel-shelf-renderer
+! www.youtube.com##ytd-rich-shelf-renderer
 
 ! 追加：ホームのおすすめを弱体化
-www.youtube.com##ytd-rich-grid-renderer:style(opacity: 0.3 !important;)
+! www.youtube.com##ytd-rich-grid-renderer:style(opacity: 0.3 !important;)
 
 ! ============================================
 ! 7. Yahoo! JAPAN（外部リンク排除・高速化）
