@@ -64,6 +64,8 @@ yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
 
 togetter.com##figure.list_box.type_amazon
 togetter.com##aside.amazon_bulk_box
+togetter.com##aside.amazon_sale_box
+
 
 ! ============================================
 ! X. その他
