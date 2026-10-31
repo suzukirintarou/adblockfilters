@@ -1,78 +1,95 @@
-togetter.com##.amazon_sale_card
-togetter.com##aside.amazon_sale_box
-togetter.com##figure.list_box.type_amazon.has_promo
-
 ! ============================================
-! 1. 汎用ブロック（高速化）
+! 汎用ブロック
 ! ============================================
 ##.yyi-rinker-contents
 ##div#site_loader_overlay
 
-! Copilot（UI 要素の徹底排除）
+! ============================================
+! Togetter
+! ============================================
+togetter.com##.amazon_sale_card
+togetter.com##aside.amazon_sale_box
+togetter.com##figure.list_box.type_amazon.has_promo
+togetter.com##.ad_custom
+togetter.com##.fixed_social_footer
+togetter.com##.follow_me_box
+togetter.com##.info_status_box
+togetter.com##.social_box
+togetter.com##.social_floating_box
+togetter.com##div.list_box.type_amazon
+togetter.com##aside.amazon_bulk_box
+
+! ============================================
+! Posfie
+! ============================================
+posfie.com##.ad_custom
+posfie.com##.fixed_social_footer
+posfie.com##.follow_me_box
+posfie.com##.info_status_box
+posfie.com##.social_box
+posfie.com##.social_floating_box
+posfie.com##div.list_box.type_amazon
+
+! ============================================
+! Microsoft Copilot
+! ============================================
 ||copilot.microsoft.com^$elemhide
-copilot.microsoft.com##div[class*="avatar"], div[class*="persona"], div[class*="character"], img[class*="avatar"]
+copilot.microsoft.com##div[class*="avatar"]
+copilot.microsoft.com##div[class*="persona"]
+copilot.microsoft.com##div[class*="character"]
+copilot.microsoft.com##img[class*="avatar"]
 copilot.microsoft.com##canvas
 
 ! ============================================
-! 2. Amazon（JP / US 共通）
+! Amazon（JP / US 共通）
 ! ============================================
 amazon.co.jp,amazon.com##[data-csa-c-type="action"][data-csa-c-content-id*="prime"]
 
-! 日本独自
+! ============================================
+! Amazon.co.jp（日本独自）
+! ============================================
 amazon.co.jp###desktop-dp-ilm_feature_div_01
 amazon.co.jp###px-profile_feature_div
 
 ! ============================================
-! 3. Livedoor Blog（外部リンク完全排除）
+! Livedoor Blog
 ! ============================================
-! CSS ではなくセレクタで高速化
 blog.livedoor.jp##a[href]:not([href*="blog.livedoor.jp"])
 
 ! ============================================
-! 4. Impress（PC Watch / AV Watch 系）
+! Impress（PC Watch / AV Watch 系）
 ! ============================================
 impress.co.jp##li:has(a[href^="/docs/news/streamer_watch/"])
 impress.co.jp##li:has(a[href^="/docs/news/todays_sales/"])
 impress.co.jp##li:has(a[href^="/pcwatch.nosh.jp/"])
 
 ! ============================================
-! 5. posfie.com / togetter.com（SNS 誘導の徹底排除）
+! YouTube
 ! ============================================
-posfie.com,togetter.com##.ad_custom, .fixed_social_footer, .follow_me_box, .info_status_box, .social_box, .social_floating_box
-posfie.com,togetter.com##div.ad_custom, div.list_box.type_amazon, div.social_floating_box, footer.fixed_social_footer
-
-! ============================================
-! 6. YouTube（UI 無効化・操作制限）
-! ============================================
+! UI 無効化・操作制限
 ! www.youtube.com##.ytd-video-preview-with-hover-cards:upward(.ytd-rich-grid-media)
 ! www.youtube.com##.ytp-card
 ! www.youtube.com##.ytp-cards-button
 ! www.youtube.com##ytd-rich-grid-media:style(pointer-events: none !important;)
 
-! 追加：ショート動画誘導を削除
+! ショート動画誘導を削除
 ! www.youtube.com##ytd-reel-shelf-renderer
 ! www.youtube.com##ytd-rich-shelf-renderer
 
-! 追加：ホームのおすすめを弱体化
+! ホームのおすすめを弱体化
 ! www.youtube.com##ytd-rich-grid-renderer:style(opacity: 0.3 !important;)
 
 ! ============================================
-! 7. Yahoo! JAPAN（外部リンク排除・高速化）
+! Yahoo! JAPAN
 ! ============================================
-! 正規表現を軽量化（先頭一致のみ）
 yahoo.co.jp##a[href^="http"]:not([href*="yahoo.co.jp"])
 
 ! ============================================
-! 8. togetter
-! ============================================
-
-togetter.com##figure.list_box.type_amazon
-togetter.com##aside.amazon_bulk_box
-togetter.com##aside.amazon_sale_box
-
-
-! ============================================
-! X. その他
+! Game*Spark
 ! ============================================
 gamespark.jp##.af_box
+
+! ============================================
+! NHK
+! ============================================
 nhk.or.jp##dialog#erpc-half-modal
