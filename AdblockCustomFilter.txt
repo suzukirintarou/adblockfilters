@@ -1,3 +1,7 @@
+togetter.com##.amazon_sale_card
+togetter.com##aside.amazon_sale_box
+togetter.com##figure.list_box.type_amazon.has_promo
+
 ! ============================================
 ! 1. 汎用ブロック（高速化）
 ! ============================================
