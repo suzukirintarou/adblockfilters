@@ -8,6 +8,9 @@
 ! ============================================
 ##.yyi-rinker-contents
 ##div#site_loader_overlay
+togetter.com##.amazon_sale_card
+togetter.com##aside.amazon_sale_box
+togetter.com##figure.list_box.type_amazon.has_promo
 
 ! ============================================
 ! 2. Copilot
